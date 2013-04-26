@@ -7,3 +7,4 @@ Pero muchas veces me he enconcontrado con la necesidad de poder conectar mi esta
 Si reflexionamos un poco, nos daremos cuenta de que este supuesto conflicto de direcciones se produce continuamente en internet y que, gracias a la magia del **NAT**, no representa ningún problema.
 
 El objetivo es simple, tengo una LAN donde se encuentran tanto mis servidores como mis clientes.
+![esquema](https://raw.github.com/1N0T/images/master/ipduplicada/nat.png)
