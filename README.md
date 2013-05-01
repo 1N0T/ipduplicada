@@ -1,10 +1,19 @@
 ![logo](https://raw.github.com/1N0T/images/master/global/1N0T.png)
 #Duplicar servidores manteniendo la misma IP.
-Si tienes experiencia con la virtualización, seguramente estarás encantado/a (me permitiréis que en los susesivo utilize sólo el masculino genérico) con la facilidad que podemos clonar un entorno para realizar pruebas si riesgo alguno.
+Los entornos virtuales nos permite duplicar servidores con mucha facilidad, lo que nos posibilita realizra actualizaciones 
+arrancandolos en una LAN separada, y comprobar si todo sigue funcionando correctamente después de las mismas.
 
-Pero muchas veces me he enconcontrado con la necesidad de poder conectar mi estación de trabajo simultáneamente al servidor original y al servidor clonado (sin realizar ningún cambio  de configuración en este último). Claro que como todos sabéis, esto no es posible ya que aparecería un conflicto de IP.
+El problema aparece cuando queremos conectar un mismo cliente al servidor original y a su clon. Todos sabemos que esto no
+es posible ya que aparecería un conflicto de IP.
+La solución es conectar cada servidor en una LAN separada y que la LAN donde se inicia el clon se conecte a al LAN principal
+mediante un equipo que realize NAT.
 
-Si reflexionamos un poco, nos daremos cuenta de que este supuesto conflicto de direcciones se produce continuamente en internet y que, gracias a la magia del **NAT**, no representa ningún problema.
+El script presupone que nuestro servidor principal tiene una IP del tipo 10.1.1.nnn. El clon mantiene la misma IP pero 
+el equipo que hace NAT, publicará una IP 10.1.13.nnn.
 
-El objetivo es simple, tengo una LAN donde se encuentran tanto mis servidores como mis clientes.
+En el equipo NAT crearemos un alias eth2:nnn con la IP 10.1.13.nnn para cada servidor que queramos duplicar.
+
+Después de ejecutar el script, el cliente podrá conectarse tanto a la 10.1.1.nnn como a la 10.1.13.nnn. Naturalmente, 
+deberemos configurar el enrrutameinto adecuado, y la VLAN si las usamos, para que haya visibilidad de las 10.1.13.nnn.
+
 ![esquema](https://raw.github.com/1N0T/images/master/ipduplicada/nat.png)
