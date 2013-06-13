@@ -1,6 +1,6 @@
 ![logo](https://raw.github.com/1N0T/images/master/global/1N0T.png)
 #Duplicar servidores manteniendo la misma IP.
-Los entornos virtuales nos permite duplicar servidores con mucha facilidad, lo que nos posibilita realizra actualizaciones 
+Los entornos virtuales nos permite duplicar servidores con mucha facilidad, lo que nos posibilita realizar actualizaciones 
 arrancandolos en una LAN separada, y comprobar si todo sigue funcionando correctamente después de las mismas.
 
 El problema aparece cuando queremos conectar un mismo cliente al servidor original y a su clon. Todos sabemos que esto no
